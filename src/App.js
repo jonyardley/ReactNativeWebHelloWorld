@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 
@@ -12,8 +6,10 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>HURRAH!</Text>
+        <Text style={styles.welcome}>Hello World!</Text>
+        <Text style={styles.instructions}>
+          This is a native and web application!
+        </Text>
       </View>
     );
   }
