@@ -9,10 +9,9 @@ const appDirectory = path.resolve(__dirname, "../");
 // errors. To fix this webpack can be configured to compile to the necessary
 // `node_module`.
 const babelLoaderConfiguration = {
-  test: /\.js$/,
   // Add every directory that needs to be compiled by Babel during the build.
   include: [
-    path.resolve(appDirectory, "index.web.js"),
+    path.resolve(appDirectory, "index.web.ts"),
     path.resolve(appDirectory, "src"),
     path.resolve(appDirectory, "node_modules/react-native-uncompiled")
   ],
@@ -43,7 +42,7 @@ const imageLoaderConfiguration = {
 
 module.exports = {
   // your web-specific entry file
-  entry: path.resolve(appDirectory, "index.web.js"),
+  entry: path.resolve(appDirectory, "index.web.ts"),
 
   // configures where the build ends up
   output: {
@@ -54,7 +53,11 @@ module.exports = {
   // ...the rest of your config
 
   module: {
-    rules: [babelLoaderConfiguration, imageLoaderConfiguration]
+    rules: [
+      babelLoaderConfiguration,
+      imageLoaderConfiguration,
+      { test: /\.tsx?$/, loader: "babel-loader!ts-loader" }
+    ]
   },
 
   plugins: [
@@ -73,6 +76,9 @@ module.exports = {
     // If you're working on a multi-platform React Native app, web-specific
     // module implementations should be written in files using the extension
     // `.web.js`.
-    extensions: [".web.js", ".js"]
+    extensions: [".ts", ".tsx", ".js"],
+    alias: {
+      "react-native": "react-native-web"
+    }
   }
 };

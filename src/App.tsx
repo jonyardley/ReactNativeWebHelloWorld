@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
+import { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 
 type Props = {};
@@ -7,9 +8,7 @@ export default class App extends Component<Props> {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Hello World!</Text>
-        <Text style={styles.instructions}>
-          This is a native and web application!
-        </Text>
+        <Text style={styles.welcome}>This is typescript... HURRAH!</Text>
       </View>
     );
   }
@@ -20,7 +19,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: "#F5FC99"
   },
   welcome: {
     fontSize: 20,
