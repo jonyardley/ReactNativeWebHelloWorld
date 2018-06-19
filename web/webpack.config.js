@@ -78,7 +78,8 @@ module.exports = {
     // `.web.js`.
     extensions: [".ts", ".tsx", ".js"],
     alias: {
-      "react-native": "react-native-web"
+      "react-native": "react-native-web",
+      "react-native-svg": "react-native-svg-web"
     }
   }
 };

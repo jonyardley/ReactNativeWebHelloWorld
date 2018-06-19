@@ -1,14 +1,18 @@
 import React from "react";
-import { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+const { Component } = React;
 
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
+import Header from "./components/Header";
+import Home from "./components/Home";
+
+export default class App extends Component {
+  public render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Hello World!</Text>
-        <Text style={styles.welcome}>This is typescript... HURRAH!</Text>
+        <SafeAreaView>
+          <Header />
+          <Home />
+        </SafeAreaView>
       </View>
     );
   }
@@ -16,14 +20,9 @@ export default class App extends Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FC99"
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: "center",
-    margin: 10
+    backgroundColor: "#258BBB",
+    flex: 1,
+    flexDirection: "column"
   }
 });

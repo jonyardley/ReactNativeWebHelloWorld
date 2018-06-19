@@ -4,6 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "ios": "react-native run-ios --simulator='iPhone X'",
+    "android": "react-native run-android",
+    "web": "webpack-dev-server -d --config ./web/webpack.config.js --inline --hot --colors",
     "test": "jest"
   },
   "dependencies": {
@@ -14,7 +17,9 @@
     "react-art": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-native": "0.55.3",
-    "react-native-web": "^0.6.1"
+    "react-native-svg": "^6.3.1",
+    "react-native-web": "^0.6.1",
+    "react-svg-loader": "^2.1.0"
   },
   "devDependencies": {
     "babel-jest": "22.4.3",
@@ -23,9 +28,12 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-react-native": "4.0.0",
     "jest": "22.4.3",
+    "prettier": "1.12.1",
+    "react-native-svg-web": "^1.0.1",
     "react-native-typescript-transformer": "^1.2.5",
     "react-test-renderer": "16.3.1",
     "ts-loader": "^4.2.0",
+    "tslint-config-prettier": "^1.12.0",
     "typescript": "^2.8.3",
     "url-loader": "^1.0.1",
     "webpack": "^4.7.0",
